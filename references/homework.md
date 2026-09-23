@@ -153,8 +153,17 @@ When homework is assigned and scored, update `progress.md` and `state.json`:
 
 ### progress.md addition
 
+When homework is assigned (before submission):
 ```markdown
-### Homework: <Type> for <Unit/Phase> — <Date>
+### Homework Assigned: <Type> for <Unit/Phase> — <Date>
+- **Status**: pending
+- **Due**: before next unit / session
+- **Tasks**: <brief list>
+```
+
+When homework is scored:
+```markdown
+### Homework Scored: <Type> for <Unit/Phase> — <Date>
 - **Score**: X / Y
 - **Passed**: Yes / No
 - **Weak areas identified**: <list>
@@ -163,17 +172,48 @@ When homework is assigned and scored, update `progress.md` and `state.json`:
 
 ### state.json update
 
-On homework failure:
+Use the `homework` object to track per-assignment lifecycle:
+
+On Unit HW failure:
 ```json
 {
-  "struggling_with": ["concept from homework gap"],
-  "homework_failures": [{"unit": 3, "type": "unit_hw", "date": "2026-09-23", "score": 4}]
+  "current_unit": 3,
+  "homework": {
+    "unit_2": {
+      "status": "retry_pending",
+      "attempts": 1,
+      "latest_score": 4
+    }
+  },
+  "struggling_with": ["wrapper return path", "replacement model"],
+  "pending_homework": "unit_2_alternate_hw",
+  "blocked_on": "unit_2_homework_retry"
+}
+```
+
+On Unit HW pass:
+```json
+{
+  "current_unit": 3,
+  "homework": {
+    "unit_2": {
+      "status": "passed",
+      "attempts": 1,
+      "latest_score": 7
+    }
+  },
+  "struggling_with": [],
+  "pending_homework": null,
+  "blocked_on": null
 }
 ```
 
 On homework pass:
 - Remove related concept from `struggling_with` if present.
+- Clear `blocked_on` and `pending_homework` when the passing homework matches the blocked requirement.
 - Add to `mastered_concepts` only if it was a novel extension (not just the same unit).
+
+**`current_unit` does NOT increment when Unit HW fails.** It only advances after both mastery AND homework pass.
 
 ---
 

@@ -30,6 +30,8 @@ D:\learn_anything_data\
 
 ```json
 {
+  @```json
+{
   "topic": "SQL for Data Analysis",
   "started": "2026-09-23",
   "last_session": "2026-09-23",
@@ -40,7 +42,16 @@ D:\learn_anything_data\
   "total_units": 8,
   "completed_units": [],
   "mastered_concepts": [],
-  "struggling_with": []
+  "struggling_with": [],
+  "homework": {
+    "pre_study": {
+      "status": "pending",
+      "attempts": 0,
+      "latest_score": null
+    }
+  },
+  "pending_homework": null,
+  "blocked_on": null
 }
 ```
 
@@ -272,9 +283,20 @@ After the unit is mastered:
   "current_unit": 2,
   "completed_units": [1],
   "mastered_concepts": ["JOIN basics"],
-  "struggling_with": []
+  "struggling_with": [],
+  "homework": {
+    "unit_1": {
+      "status": "pending",
+      "attempts": 0,
+      "latest_score": null
+    }
+  },
+  "blocked_on": null,
+  "pending_homework": null
 }
 ```
+
+Note: `current_unit` advances to N+1 only after the unit is mastered AND its homework is passed. If homework fails, `current_unit` stays at N until the alternate homework passes.
 
 ### Step 6.5: Assign Homework
 
@@ -298,13 +320,16 @@ After updating records:
 
 ## Phase 2: Resuming Sessions
 
-When the user wants to continue:
+When the user wants to continue, follow this exact sequence:
 
-1. Read `state.json` to find `current_unit` and `completed_units`.
-2. Read the latest entry in `progress.md` for context.
-3. Briefly recap the last mastered unit (1–2 sentences).
-4. If there are items in `struggling_with`, do a quick 1-question warm-up on those before starting the next unit.
-5. Proceed with Phase 1 (Step 2 onward) for the next unit.
+1. **Check homework gate**: Read `state.json`. If `blocked_on` is set, new teaching is locked — you may only do review or homework retry. Do not start a new unit.
+2. **Check pending homework**: If `pending_homework` exists, address it before any new teaching. Warm-up HW does NOT fulfill a pending Unit HW requirement.
+3. **Recap**: Read the latest entry in `progress.md` for context. Briefly recap the last mastered unit (1–2 sentences).
+4. **Assign Warm-up HW**: Per `references/homework.md`, at session start assign a warm-up to reactivate recall of previous units. This replaces the old "quick 1-question warm-up" — use the full Warm-up HW format.
+5. **After Warm-up HW passed**: If `blocked_on` is null and no `pending_homework` remains, proceed with Phase 1 for the next unit.
+6. **If `blocked_on` is set**: Even after passing Warm-up HW, the user must complete the required homework before unlocking the next unit. Warm-up pass may clear recall-level `struggling_with` items but CANNOT clear `blocked_on`.
+
+**Key rule: Warm-up HW and Unit HW are independent gates. One does not substitute for the other.**
 
 ## Session Patterns
 

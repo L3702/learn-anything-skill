@@ -141,6 +141,33 @@ After mastery:
 1. Append a section to `progress.md` with status, comprehension, observations.
 2. Update `state.json` (current_unit, completed_units, mastered_concepts, struggling_with, last_session).
 
+### Step 8.5: Assign Homework
+
+After updating records, assign homework per `references/homework.md`:
+- **After each unit** → Unit HW (reinforce & extend)
+- **After Phase 0 plan approval** → Pre-study HW (readiness)
+- **At session resume** → Warm-up HW (combat forgetting)
+- **After all units complete** → Capstone HW (synthesis)
+
+Score homework using the rubrics. On failure, follow the remediation protocol (max 3 failures before mandatory review session). Record scores in `progress.md` and update `state.json` (`struggling_with`, `homework_failures`, `pending_homework`, `blocked_on`).
+
+### Step 9: Homework Gate Before Next Unit
+
+Before starting a new unit, check `state.json` for `blocked_on`:
+- If `blocked_on` is set → new units are locked. Warm-up HW does NOT clear this gate.
+- Only passing the required homework (score ≥ threshold) clears the block and unlocks the next unit.
+- If `pending_homework` exists, it must be completed before new teaching begins.
+
+**Warm-up HW vs Unit HW relationship:**
+- Warm-up HW tests recall of previously mastered units. Passing it is required to resume.
+- Unit HW tests extension and application of a specific unit. Failing it blocks the NEXT unit.
+- Warm-up pass CAN clear `struggling_with` (recall-level) but CANNOT clear `blocked_on` (application-level).
+- A Unit HW failure can only be cleared by passing the alternate Unit HW.
+
+After mastery:
+1. Append a section to `progress.md` with status, comprehension, observations.
+2. Update `state.json` (current_unit, completed_units, mastered_concepts, struggling_with, last_session).
+
 ### Step 9: Decide Next Action
 
 - All units complete → final synthesis review.
