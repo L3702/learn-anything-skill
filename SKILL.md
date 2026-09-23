@@ -1,6 +1,6 @@
 ﻿---
 name: learn-anything
-description: Help users learn any topic through progressive teaching, build personalized learning paths, and persist learning progress across sessions. Use when the user wants to learn a new subject, study a topic, follow a curriculum, track learning progress, or receive guided instruction. Do not use for answering one-off factual questions that do not benefit from a teaching flow.
+description: Help users learn any topic through progressive teaching, build personalized learning paths, and persist learning progress across sessions. Use when the user wants to learn a new subject, study a topic, follow a curriculum, track learning progress, or receive guided instruction. Do not use for answering one-off factual questions that do not benefit from a teaching flow. Homework is assigned at the end of each phase and unit — see `references/homework.md` for the full specification.
 metadata:
   short-description: Progressive learning with path tracking
 ---
@@ -275,6 +275,17 @@ After the unit is mastered:
   "struggling_with": []
 }
 ```
+
+### Step 6.5: Assign Homework
+
+After updating records for a mastered unit, assign homework per `references/homework.md`:
+
+- **After each unit** → Unit HW (reinforce & extend)
+- **After Phase 0 plan approval** → Pre-study HW (readiness)
+- **At session resume** → Warm-up HW (combat forgetting)
+- **After all units complete** → Capstone HW (synthesis)
+
+Score homework using the rubrics in `references\homework.md`. On failure, follow the remediation protocol (max 3 failures before mandatory review session). Record scores in `progress.md` and update `state.json` (`struggling_with`, `homework_failures`).
 
 ### Step 7: Decide Next Action
 
