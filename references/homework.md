@@ -39,7 +39,7 @@ Activate prior knowledge, set mental hooks, and surface hidden gaps before teach
 | **Self-awareness** | Numeric rating + specific, actionable plan for improvement | Rating given but no plan | No rating or no reflection |
 
 **Pass threshold:** ≥ 4 / 6 points
-**Below threshold:** Address gaps before proceeding to Unit 1.
+**Below threshold:** Explain the specific gaps and ask the user to micro-resubmit the deficient part (not the full HW). If the micro-resubmission passes, proceed. If it fails again, address the gaps directly and proceed anyway — Pre-study HW is a readiness check, not a blocker. Never delay teaching more than one retry for Pre-study.
 
 ---
 

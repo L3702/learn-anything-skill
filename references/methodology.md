@@ -42,6 +42,15 @@ All intake questions must be presented as multiple choice. This makes it easy fo
    - (C) Advanced — deep understanding, optimize and teach
    - (D) Focused — learn one specific sub-skill
 
+### Pre-study Failure Handling
+
+Pre-study HW is a readiness check, not a gate. If the user fails:
+1. Explain the specific gaps.
+2. Ask for a micro-resubmission of only the deficient parts.
+3. If micro-resubmission passes → proceed to Unit 1.
+4. If micro-resubmission fails → address gaps directly and proceed anyway.
+Never delay teaching more than one retry for Pre-study.
+
 ### Plan Design Rules
 
 - Each topic decomposes into 5–10 minimum learnable units (MLUs).
@@ -176,11 +185,14 @@ After mastery:
 
 ## Resuming Sessions
 
-1. Read `state.json` for `current_unit` and `struggling_with`.
+1. Read `state.json` for `current_unit`, `blocked_on`, `pending_homework`, and `struggling_with`.
 2. Read latest `progress.md` entry for context.
-3. Quick recap of last mastered unit.
-4. If `struggling_with` is non-empty: warm-up question on those before new material.
-5. Proceed with next unit.
+3. **Check `blocked_on`**: If set, new teaching is locked. Only review or homework retry is allowed.
+4. **Assign full Warm-up HW** (per `references/homework.md`) — there is no shortcut warm-up.
+5. After Warm-up HW passed: clear recall-level `struggling_with` if appropriate.
+6. If `blocked_on` is null and no `pending_homework`: proceed with `current_unit`.
+
+**`current_unit` invariant**: It always points to a unit whose prerequisites AND homework are both satisfied. Never advance it past a unit with failed homework.
 
 ## Adaptation Heuristics
 
