@@ -1,4 +1,4 @@
-﻿# Homework Specification
+# Homework Specification
 
 This document defines the homework system for `learn-anything`. Homework is assigned at the end of each phase and unit, with quantitative scoring rubrics for consistent evaluation.
 

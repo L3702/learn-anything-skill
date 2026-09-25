@@ -1,4 +1,4 @@
-﻿# Progressive Learning Methodology
+# Progressive Learning Methodology
 
 ## The Intake-First Principle
 

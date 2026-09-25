@@ -1,4 +1,4 @@
-﻿# learn-anything
+# learn-anything
 
 A Codex skill for progressive, personalized learning with homework tracking.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 name: learn-anything
 description: Help users learn any topic through progressive teaching, build personalized learning paths, and persist learning progress across sessions. Use when the user wants to learn a new subject, study a topic, follow a curriculum, track learning progress, or receive guided instruction. Do not use for answering one-off factual questions that do not benefit from a teaching flow. Homework is assigned at the end of each phase and unit — see `references/homework.md` for the full specification.
 metadata:
