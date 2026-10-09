@@ -9,6 +9,35 @@ metadata:
 
 Guided progressive teaching that adapts to the user and remembers where they left off.
 
+## HARD RULE: Multiple Choice Only — No Open-Ended Questions
+
+**This is the single most important format rule in this skill. Violating it breaks the entire intake flow.**
+
+During ALL user-facing assessment and clarification (Phase 0.5, Phase 0, Goal Discovery, Knowledge Assessment, Goal Clarification), you MUST present questions as multiple choice with 4-5 concrete options. NEVER ask open-ended questions like "Tell me about your experience" or "What do you want to learn?"
+
+**Why this matters:**
+- Open-ended questions make users freeze — they don't know how much to say or where to start
+- Multiple choice gives users a low-friction way to respond and gives you clean, structured data
+- The entire plan-building process depends on structured answers
+
+**Forbidden patterns (NEVER do this):**
+- "Tell me about your experience with X"
+- "What do you want to learn?"
+- "How much do you know about X?"
+- "Describe your current skill level"
+- Any question without explicit (A) (B) (C) (D) options
+
+**Required pattern (ALWAYS do this):**
+> **Q: [Specific question]?**
+> - (A) [Concrete option]
+> - (B) [Concrete option]
+> - (C) [Concrete option]
+> - (D) [Concrete option]
+
+**If the user volunteers extra information beyond their choice:** Acknowledge it briefly ("Noted — that helps"), record it in your context, but ALWAYS follow up with the structured multiple-choice question. Do not let the conversation drift into open-ended dialogue.
+
+**This rule applies to:** Phase 0.5 (Goal Discovery), Phase 0 (Intake), and any future assessment. The ONLY exception is when the user explicitly asks an open-ended question themselves — then you answer it, but return to multiple choice for your own questions.
+
 ## Data Storage
 
 All learning records are stored externally at `D:\learn_anything_data\` (create if it does not exist).
@@ -67,9 +96,9 @@ Before starting any session, read `D:\learn_anything_data\<topic-slug>\state.jso
 
 **If the user already has a specific topic (e.g., "I want to learn React"), skip directly to Phase 0.**
 
-### Step 1: Inventory Existing Skills (Multiple Choice Only)
+### Step 1: Inventory Existing Skills (Multiple Choice Only — MANDATORY)
 
-First, understand what the user already knows. Ask 2–3 questions about their current skill set.
+First, understand what the user already knows. Ask 2–3 questions about their current skill set. **Every question MUST have 4-5 options. Never ask "Tell me what you know."**
 
 **Question 1 — Primary skill level:**
 
@@ -188,9 +217,9 @@ Use these heuristics to decide whether to activate Phase 0.5:
 
 **If you arrived here from Phase 0.5 (Goal Discovery):** The user's existing skill inventory is already known. Skip prerequisite questions for topics they've confirmed knowing. Focus the assessment on the new topic's specifics.
 
-### Step 1: Knowledge Assessment (Multiple Choice Only)
+### Step 1: Knowledge Assessment (Multiple Choice Only — MANDATORY)
 
-Assess the user with structured multiple-choice questions. Let the user pick an option rather than asking open-ended questions. Ask 3–5 questions covering experience, confidence, and prerequisites.
+Assess the user with structured multiple-choice questions. **Every single question MUST have 4-5 options. Never ask "How much experience do you have?" without attaching choices.** Ask 3–5 questions covering experience, confidence, and prerequisites.
 
 **Format each question like this:**
 
@@ -208,9 +237,9 @@ Cover these dimensions across your questions:
 3. **Prerequisite check** — For key prerequisites, ask similarly structured questions.
 4. **Practical exposure** — "Which statement matches your hands-on experience?"
 
-### Step 2: Goal Clarification (Multiple Choice)
+### Step 2: Goal Clarification (Multiple Choice — MANDATORY)
 
-Ask the user to choose their goal from options:
+Ask the user to choose their goal from options. **Never ask "What's your goal?" without choices:**
 
 > **Q: What''s your target proficiency?**
 > - (A) Functional literacy — understand and follow along
