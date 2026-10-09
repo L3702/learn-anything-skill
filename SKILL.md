@@ -311,10 +311,20 @@ Ask the user to produce an answer in their own words — not recite, but synthes
 - "In one sentence, explain why we need JOINs instead of putting everything in one table."
 - "In one sentence, what problem do pointers solve that raw variables don''t?"
 
-**Decision rule:**
+**Decision rule (Progressive Reflection — never give the answer on first error):**
+
 - Both correct → proceed to Step 4.
-- T/F wrong → re-explain that specific piece, then ask a new T/F.
-- Production answer evaluation: use the **Production Answer Rubric** below. Score 3–4 → proceed. Score 1–2 → give a guiding hint, let them retry. Score 1–2 again on second attempt → re-teach the Intuition step with a different analogy.
+- **T/F wrong (1st attempt):** Do NOT reveal the correct answer. Instead, ask a guiding question that leads the user to discover their own mistake. Examples:
+  - "Think about what happens when you try to JOIN three tables — does the statement still hold?"
+  - "Remember the analogy we used. Does a pointer hold the data itself, or something else?"
+  - Wait for the user to self-correct. Only if they get it wrong again → proceed to 2nd attempt.
+- **T/F wrong (2nd attempt):** Give a partial hint — point to the specific part of the concept they're missing, but don't state the full answer. Example: "You're close, but think about what the word 'only' means in that statement."
+- **T/F wrong (3rd attempt):** Now re-explain that specific piece, then ask a new T/F.
+- **Production answer evaluation:** Use the **Production Answer Rubric** below.
+  - Score 3–4 → proceed.
+  - Score 1–2 (1st attempt) → Do NOT give the answer. Ask a probing question about the specific criterion they missed. Example: if they lacked specificity, ask "Can you name the exact mechanism instead of describing it generally?"
+  - Score 1–2 (2nd attempt) → Give a targeted hint on the weakest criterion, but let them produce the final answer.
+  - Score 1–2 (3rd attempt) → Re-teach the Intuition step with a different analogy.
 
 ### Production Answer Rubric
 
@@ -342,6 +352,26 @@ Score the user''s teach-back explanation on these 4 criteria (1 point each):
 
 **Scoring:** 4 = could teach a class, 3 = solid understanding, 1–2 = partial gaps, 0 = re-teach needed
 
+### Reflection Principle (applies to ALL error correction)
+
+**Never give the correct answer on the first error.** The goal is to build the user's ability to self-correct, not to memorize corrections.
+
+**Three-tier response to any wrong answer:**
+
+| Attempt | What you do | What you do NOT do |
+|---|---|---|
+| 1st wrong | Ask a guiding question that leads them to discover their mistake | Reveal the answer, re-explain, or give hints |
+| 2nd wrong | Give a partial hint — narrow the search space but let them find the answer | State the full correct answer |
+| 3rd wrong | Re-explain the concept, then ask a new question | — |
+
+**Guiding question patterns (use these instead of giving answers):**
+- "What made you think that?" — surfaces flawed reasoning
+- "Can you think of a counterexample?" — tests if the answer always holds
+- "How does this connect to [previous concept]?" — activates prior knowledge
+- "What would happen if we changed one variable?" — tests understanding of causality
+- "Remember the analogy — does your answer fit?" — bridges back to intuition
+
+**Exception:** If the user explicitly says "just tell me the answer" or shows frustration after 2 attempts, give the answer directly. The reflection process should feel like a puzzle, not a punishment.
 
 ### Step 4: Hands-On Practice
 
